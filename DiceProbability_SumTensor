@@ -1,0 +1,22 @@
+clc; clear all; %this code compute the probability that the sum of three dice values will give k
+a=6;
+P=zeros(a,a,a);
+k=9
+n=0 %number of times that "k" happens (k is the sum of the 3 random extractions)
+for h=1:a
+    for i=1:a
+        for j=1:a
+            P(h,i,j)=h+i+j; % k= sum of values of dice
+            if P(h,i,j)==k
+                n=n+1
+            end
+        end
+    end
+end
+
+%is recommended to plot the tensor P, just to see the quasi-trivial diagonal pattern
+
+disp (P)
+disp(n)
+%probability
+disp(n/(a^3))
